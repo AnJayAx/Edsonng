@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="">
+<html lang="en" class="dark">
 
 <head>
     <!-- Basic Page Needs
@@ -17,11 +17,11 @@
 
     <!-- Site Title
     ================================================== -->
-    <title>Minfo - Tailwind CSS Personal Resume/vCard Template</title>
+    <title>Edson</title>
 
     <!-- Site Favicon
     ================================================== -->
-    <link rel="shortcut icon" href="img/user-sidebar-thumb.png" sizes="any">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/logos/E_logo.gif') }}" sizes="any">
 
     <!-- Google Fonts
     ================================================== -->
@@ -53,7 +53,7 @@
         <div class="loader_line"></div>
         <div
             class="absolute w-20 h-20 transition-all delay-300 -translate-x-1/2 -translate-y-1/2 rounded-full logo top-1/2 left-1/2 bg-nightBlack border-greyBlack flex-center">
-            <img src="{{ url_for('static', filename='img/site-logo.svg') }}" alt="Minfo">
+            <img src="{{ url_for('static', filename='img/logos/E_logo.gif') }}" alt="Edson">
         </div>
     </div>
     <!-- App Preloader End -->
@@ -71,8 +71,8 @@
                 class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-2 px-3 bg-white/10 mobile-menu-bar sm:px-6 backdrop-blur-md xl:hidden">
                 <div class="text-lg font-medium name">
                     <a href="index.html" class="flex items-center gap-2 text-black dark:text-white">
-                        <img src="{{ url_for('static', filename='img/site-logo.svg') }}" alt="Minfo">
-                        <span>Minfo</span>
+                        <img src="{{ url_for('static', filename='img/logos/E_logo.gif') }}" alt="Edson">
+                        <span>Edson</span>
                     </a>
                 </div>
                 <!-- Mobile Hamburger Menu Start -->
@@ -103,7 +103,7 @@
                 </div>
                 <ul class="space-y-5 font-normal main-menu">
                     <li data-scroll-nav="0" class="relative group active">
-                        <a href="#home" class="flex items-center space-x-2 group">
+                        <a href="#about" class="flex items-center space-x-2 group">
                             <span class="w-5 text-black dark:text-white group-[&.active]:text-theme">
                                 <i class="fal fa-home"></i>
                             </span>
@@ -234,10 +234,10 @@
                     <div class="mx-4 mt-12 text-center user-info lg:mx-6">
                         <a href="index.html"
                             class="w-36 h-36 mb-2.5 block mx-auto border-6 border-platinum dark:border-[#2f2f2f] overflow-hidden rounded-full *:w-full *:h-full *:rounded-full">
-                            <img src="{{ url_for('static', filename='img/user-sidebar-thumb.png') }}"" 
+                            <img src="{{ url_for('static', filename='img/myself/top_osaka.png') }}"" 
                                 class=" hidden dark:block "
                                 alt=" Brown Reddick"> <!--Image for Dark Version -->
-                            <img src="{{ url_for('static', filename='img/user-sidebar-thumb-light.png') }}"" 
+                            <img src="{{ url_for('static', filename='img/myself/top_osaka.png') }}"" 
                                 class=" dark:hidden" alt="Brown Reddick"> <!--Image for Light Version -->
                         </a>
                         <h6 class="mb-1 text-lg font-semibold text-black dark:text-white name">Edson Ng</h6>
@@ -258,7 +258,7 @@
                             </li>
                             <li>
                                 <span class="flex-1 font-medium text-black dark:text-white">Age:</span>
-                                <span>26</span>
+                                <span>23</span>
                             </li>
                         </ul>
                     </div>
@@ -337,7 +337,7 @@
                 <div
                     class="flex border rounded-full logo w-15 h-15 border-platinum dark:border-metalBlack flex-center hover:bg-white dark:hover:bg-metalBlack">
                     <a href="index.html">
-                        <img src="{{ url_for('static', filename='img/site-logo.svg') }}" alt="Minfo">
+                        <img src="{{ url_for('static', filename='img/logos/E_logo.gif') }}" alt="Edson">
                     </a>
                 </div>
                 <!-- Site Logo Start -->
@@ -347,7 +347,7 @@
                 <div class="my-4 menu">
                     <ul class="space-y-2 text-center *:relative">
                         <li data-scroll-nav="0" class="group active">
-                            <a href="#home"
+                            <a href="#about"
                                 class="w-9 h-9 rounded-full flex-center group-[&.active]:bg-white dark:group-[&.active]:bg-metalBlack group-hover:bg-white dark:group-hover:bg-metalBlack transition-all duration-300 before:content-[attr(data-title)] before:absolute before:right-10 before:bg-white dark:before:bg-metalBlack before:text-sm text-theme dark:before:text-white before:px-4 before:py-2 before:rounded-md before:font-normal dark:before:font-light before:opacity-0 before:transition-all before:duration-200 group-hover:before:opacity-100 after:content-[''] after:absolute after:w-0 after:h-0 after:right-8 after:border-solid after:border-t-4 after:border-r-0 after:border-b-4 after:border-l-8 after:border-t-transparent after:border-r-transparent after:border-b-transparent after:border-l-white dark:after:border-l-metalBlack after:opacity-0 after:transition-all after:duration-200 group-hover:after:opacity-100"
                                 data-title="Home">
                                 <span
@@ -477,7 +477,7 @@
                 class="minfo__contentBox relative mx-auto max-w-container xl:max-2xl:max-w-65rem *:py-5 xl:*:py-3.5 *:max-w-content max-xl:*:mx-auto xl:*:ml-auto xl:max-2xl:*:max-w-50rem">
 
                 <!-- Hero/Introduction Section Start -->
-                <div data-scroll-index="0" id="home">
+                <!-- <div data-scroll-index="0" id="home">
 
                     <div class="hero-section px-5 py-8 md:p-8 bg-white dark:bg-nightBlack rounded-2xl lg:p-10 2xl:p-13">
                         <div
@@ -489,17 +489,11 @@
                             <div class="text-content pt-7 lg:pt-8 max-lg:max-w-[30rem]">
                                 <h1
                                     class="text-[32px] lg:text-5xl xl:text-4xl 2xl:text-5xl font-semibold text-black dark:text-white leading-1.27 lg:leading-1.27 xl:leading-1.27 2xl:leading-1.27 mb-4 lg:mb-5">
-                                    I Make <br>
-                                    <span class="text-theme">AI Predictions</span>
+                                    My <span class="text-theme">Portflio</span>
                                 </h1>
                                 <p>
-                                    Currently, I am an undergraduate in <span
-                                        class="font-medium text-black dark:text-white/90">Singapore Institute of
-                                        Technology</span> pursuing a degree in <span
-                                        class="font-medium text-black dark:text-white/90">Applied Artificial
-                                        Intelligence</span>. I am a passionate AI developer with a strong interest in
-                                    web development. I have experience in various programming languages and frameworks,
-                                    and I am always eager to learn new technologies and improve my skills.
+                                    Follow me on my journey as I explore the world of AI and web development. This website is a
+                                    showcase of my skills and projects, where I share my experiences and insights.
                                 </p>
                                 <ul
                                     class="flex items-center mt-4 -mx-3 lg:mt-5 *:flex *:items-center *:mx-3 *:text-regular">
@@ -524,9 +518,9 @@
 
                             </div>
                             <div class="hero-image flex-[0_0_20.3rem] max-md:hidden">
-                                <img src="{{ url_for('static', filename='img/hero-img-1.png') }}" class="dark:hidden"
+                                <img src="{{ url_for('static', filename='img/myself/mt_fuji_car.jpg') }}" class="dark:hidden"
                                     alt="Hero Image - Light Mode">
-                                <img src="{{ url_for('static', filename='img/hero-img-2.png') }}"
+                                <img src="{{ url_for('static', filename='img/myself/mt_fuji_car.jpg') }}"
                                     class="hidden dark:block" alt="Hero Image - Dark Mode">
                             </div>
                         </div>
@@ -602,7 +596,7 @@
                         </div>
                     </div>
 
-                </div>
+                </div> -->
                 <!-- Hero/Introduction Section End -->
 
 
@@ -677,21 +671,40 @@
                                 <li>
                                     <span class="flex-[0_0_6rem]">Github</span>
                                     <span class="flex-[0_0_2rem]">:</span>
-                                    <span class="text-black dark:text-white">https://github.com/AnJayAx</span>
+                                    <span class="text-black dark:text-white">github.com/AnJayAx</span>
                                 </li>
+                                <li>
+                                    <span class="flex-[0_0_6rem]">LinkedIn</span>
+                                    <span class="flex-[0_0_2rem]">:</span>
+                                    <span class="text-black dark:text-white">linkedin.com/in/edsonng/</span>
+                                </li>
+                                
                                 <li>
                                     <span class="flex-[0_0_6rem]">Language</span>
                                     <span class="flex-[0_0_2rem]">:</span>
                                     <span class="text-black dark:text-white">English, Chinese</span>
                                 </li>
                             </ul>
+                            <ul
+                                class="grid mt-4 mb-10 text-sm lg:mt-6 md:grid-cols-2 gap-x-8 gap-y-3 *:flex *:items-center">
+                                <li>
+                                    <span class="flex-[0_0_6rem]"><span class="fal fa-shuttlecock"></span> Sports</span>
+                                    <span class="flex-[0_0_2rem]">:</span>
+                                    <span class="text-black dark:text-white">Basketball, Badminton, Bowling, Football</span>
+                                </li>
+                                <li>
+                                    <span class="flex-[0_0_6rem]"><span class="fal fa-gamepad"></span> Games</span>
+                                    <span class="flex-[0_0_2rem]">:</span>
+                                    <span class="text-black dark:text-white">FPS, RPG, Survival, Racing</span>
+                                </li>
+                            </ul>
 
                             <ul class="grid grid-cols-2 gap-6 counters md:grid-cols-4 xl:gap-8">
                                 <li>
                                     <div class="mb-1 text-2xl font-semibold md:text-3xl number text-theme 2xl:text-4xl">
-                                        <span>5</span>+
+                                        <span>6</span>+
                                     </div>
-                                    <div class="text-sm">Years Of IT</div>
+                                    <div class="text-sm">Years Of Coding</div>
                                 </li>
                                 <li>
                                     <div class="mb-1 text-2xl font-semibold md:text-3xl number text-theme 2xl:text-4xl">
@@ -712,7 +725,61 @@
                                     <div class="text-sm">Award Won</div>
                                 </li>
                             </ul>
-
+                            <ul class="mt-7 buttons">
+                                <li data-scroll-nav="8">
+                                    <a href="#contact"
+                                        class="btn-theme inline-flex items-center gap-2 bg-theme py-4 md:py-4.5 lg:px-9 px-7 rounded-4xl leading-none transition-all duration-300 hover:shadow-theme_shadow text-white font-medium text-[15px] md:text-base">
+                                        <i class="fal fa-magic"></i>
+                                        Try out my AI!
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mb-1 mt-11 xl:mb-0 xl:mt-2">
+                            <div class="items-center grid-cols-12 overflow-hidden md:grid">
+                                <div class="hidden col-span-2 md:inline-block">
+                                    <h6
+                                        class="font-medium text-black dark:text-white/80 text-sm md:max-w-[8rem] border-l border-theme pl-4">
+                                        Development Environments
+                                    </h6>
+                                </div>
+                                <div class="col-span-10 logo-slider">
+                                    <div class="swiper">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <a href="#" class="transition duration-200 flex-center">
+                                                    <img src="{{ url_for('static', filename='img/logos/vsc.png') }}"
+                                                        alt="Partner Name">
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href="#" class="transition duration-200 flex-center">
+                                                    <img src="{{ url_for('static', filename='img/logos/pycharm.png') }}"
+                                                        alt="Partner Name">
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href="#" class="transition duration-200 flex-center">
+                                                    <img src="{{ url_for('static', filename='img/logos/jupyter_notebook.png') }}"
+                                                        alt="Partner Name">
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href="#" class="transition duration-200 flex-center">
+                                                    <img src="{{ url_for('static', filename='img/logos/eclipse.png') }}"
+                                                        alt="Partner Name">
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href="#" class="transition duration-200 flex-center">
+                                                    <img src="{{ url_for('static', filename='img/logos/android_studio.png') }}"
+                                                        alt="Partner Name">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -727,12 +794,12 @@
                         <div
                             class="inline-flex items-center gap-2 px-4 py-2 text-xs tracking-wide text-black dark:text-white border lg:px-5 section-name border-platinum dark:border-greyBlack200 rounded-4xl">
                             <i class="fal fa-briefcase text-theme"></i>
-                            SERVICES
+                            PROJECTS
                         </div>
                         <div class="mb-8 mt-7 md:my-10 section-title">
                             <h2
                                 class="title text-[32px] md:text-4xl lg:text-5xl font-extralight text-black dark:text-white leading-1.27">
-                                My <span class="font-semibold text-theme">Services</span>
+                                My <span class="font-semibold text-theme">Projects</span>
                             </h2>
                             <p class="max-w-xl mt-4 md:mt-6 subtitle">
                                 I design products that are more than pretty. I make them shippable and usable, tempor

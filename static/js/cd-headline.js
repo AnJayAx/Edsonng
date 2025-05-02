@@ -11,7 +11,7 @@ jQuery(document).ready(function($){
 		selectionDuration = 500,
 		typeAnimationDelay = selectionDuration + 800,
 		//clip effect 
-		revealDuration = 600,
+		revealDuration = 1000,
 		revealAnimationDelay = 1500;
 	
 	initHeadline();
@@ -84,10 +84,28 @@ jQuery(document).ready(function($){
 			showLetter(nextWord.find('i').eq(0), nextWord, bool, lettersDelay);
 
 		}  else if($word.parents('.cd-headline').hasClass('clip')) {
-			$word.parents('.cd-words-wrapper').animate({ width : '2px' }, revealDuration, function(){
-				switchWord($word, nextWord);
-				showWord(nextWord);
-			});
+			// Make hiding also choppy
+			var currentWidth = $word.parents('.cd-words-wrapper').width();
+			var steps = 3; // Fewer steps for hiding
+			var stepWidth = currentWidth / steps;
+			
+			function animateHideStep(step) {
+				if (step <= steps) {
+					var newWidth = currentWidth - (step * stepWidth);
+					$word.parents('.cd-words-wrapper').animate({ width: Math.max(newWidth, 2) }, 80, function() {
+						if (step < steps) {
+							setTimeout(function() {
+								animateHideStep(step + 1);
+							}, 20);
+						} else {
+							switchWord($word, nextWord);
+							showWord(nextWord);
+						}
+					});
+				}
+			}
+			
+			animateHideStep(1);
 
 		} else if ($word.parents('.cd-headline').hasClass('loading-bar')){
 			$word.parents('.cd-words-wrapper').removeClass('is-loading');
@@ -105,11 +123,31 @@ jQuery(document).ready(function($){
 		if($word.parents('.cd-headline').hasClass('type')) {
 			showLetter($word.find('i').eq(0), $word, false, $duration);
 			$word.addClass('is-visible').removeClass('is-hidden');
-
-		}  else if($word.parents('.cd-headline').hasClass('clip')) {
-			$word.parents('.cd-words-wrapper').animate({ 'width' : $word.width() + 10 }, revealDuration, function(){ 
-				setTimeout(function(){ hideWord($word) }, revealAnimationDelay); 
-			});
+		} else if($word.parents('.cd-headline').hasClass('clip')) {
+			// Add this multi-step animation to create a choppy effect
+			var wordWidth = $word.width() + 10;
+			var steps = 5; // Number of steps for choppy effect
+			var stepWidth = wordWidth / steps;
+			var currentWidth = 0;
+			
+			// Use revealDuration for the total animation time
+			var stepDuration = Math.floor(revealDuration / steps);
+			var stepDelay = 30; // Pause between steps
+			
+			function animateStep(step) {
+				if (step <= steps) {
+					currentWidth = step * stepWidth;
+					$word.parents('.cd-words-wrapper').animate({ 'width': currentWidth }, stepDuration, function() {
+						setTimeout(function() {
+							animateStep(step + 1);
+						}, stepDelay);
+					});
+				} else {
+					setTimeout(function() { hideWord($word) }, revealAnimationDelay);
+				}
+			}
+			
+			animateStep(1);
 		}
 	}
 

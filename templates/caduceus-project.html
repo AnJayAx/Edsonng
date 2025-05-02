@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+{% block title %}WELCOME{% endblock %}
+
+{% block content %}
+
+<!-- Project Details Section Start -->
+<div class="py-3.5 max-w-content xl:max-2xl:max-w-50rem max-xl:mx-auto xl:ml-auto">
+
+    <div class="px-5 py-8 md:p-8 bg-white dark:bg-nightBlack rounded-2xl lg:p-10 2xl:p-13">
+        <div
+            class="inline-flex items-center gap-2 px-4 py-2 text-xs tracking-wide text-black dark:text-white border lg:px-5 section-name border-platinum dark:border-greyBlack200 rounded-4xl">
+            <i class="fal fa-tasks-alt text-theme"></i>
+            Project Details
+        </div>
+
+        <div class="flex flex-wrap items-center justify-between mt-7 lg:mt-10">
+            <h2 class="text-2xl font-semibold leading-normal text-black dark:text-white article-title lg:text-3xl lg:leading-normal">
+                Caduceus
+            </h2>
+            <div class="flex items-center gap-3 mt-4 md:mt-0">
+                <a href="#" class="px-4 py-2 text-sm font-medium text-white transition-all bg-theme hover:bg-theme/90">
+                    <i class="far fa-external-link mr-1"></i> Visit Site
+                </a>
+                <a href="#" class="px-4 py-2 text-sm font-medium text-black dark:text-white transition-all border border-platinum dark:border-greyBlack200 hover:bg-slate-100 dark:hover:bg-greyBlack">
+                    <i class="fab fa-github mr-1"></i> View Code
+                </a>
+            </div>
+        </div>
+        <div class="mb-4 overflow-hidden mt-7 xl:my-8 thumb rounded-xl xl:rounded-2xl">
+            <img src="{{ url_for('static', filename='img/portfolio/portfolio-img1-xl.png') }}" class="w-full" alt="Project Thumbnail Image">
+        </div>
+        <div class="post-meta sm:flex items-center justify-between my-8 mb-10 max-sm:space-y-3.5">
+            <div>
+                <h6 class="text-black dark:text-white">Theme:</h6>
+                <p class="text-regular">Healthcare</p>
+            </div>
+            <div>
+                <h6 class="text-black dark:text-white">Author(s):</h6>
+                <p class="text-regular">Edson, Hanif, Samuel</p>
+            </div>
+            <div>
+                <h6 class="text-black dark:text-white">Year Completed:</h6>
+                <p class="text-regular">2021</p>
+            </div>
+        </div>
+
+
+        <div>
+            <h3 class="mb-3 text-lg font-medium text-black dark:text-white xl:text-2xl">Project Description</h3>
+            <p class="text-regular !leading-[2]">
+                With the use of AI, we hope to help patients diagnose their symptoms and concerns in a more efficient way, while also providing a platform for doctors to connect with patients and provide them with the best possible care. The app will also allow patients to keep track of their health records and share them with their doctors, making it easier for both parties to stay informed and up-to-date.
+            </p>
+            <h3 class="mb-3 mt-8 text-lg font-medium text-black dark:text-white xl:text-2xl">Client</h3>
+            <p class="text-regular !leading-[2]">
+                This is a group project during my time in Nanyang Polytechnic.
+            </p>
+            <p class="text-regular !leading-[2] mt-4">My Features:</p>
+            <ul class="text-regular !leading-[2] list-disc ml-6 my-4">
+                <li>Health Dashboard Monitoring</li>
+                <li>
+                    <span>Acne Recogniser</span>
+                    <a href="#" class="px-3 py-1 text-xs font-medium text-white transition-all bg-theme hover:bg-theme/90">
+                        <i class="far fa-arrow-right mr-1"></i> Try It
+                    </a>
+                </li>
+                <li>
+                    <span>Symptom Analyser</span>
+                    <a href="/symptom-analyser" class="px-3 py-1 text-xs font-medium text-white transition-all bg-theme hover:bg-theme/90">
+                        <i class="far fa-arrow-right mr-1"></i> Try It
+                    </a>
+                </li>
+            </ul>
+
+            <div class="grid gap-5 my-8 sm:grid-cols-2 md:gap-8">
+                <div class="overflow-hidden rounded-xl xl:rounded-2xl">
+                    <img src="{{ url_for('static', filename='img/portfolio/portfolio-img1-2.png') }}" class="w-full" alt="Project Inner Colum Image">
+                </div>
+                <div class="overflow-hidden rounded-xl xl:rounded-2xl">
+                    <img src="{{ url_for('static', filename='img/portfolio/portfolio-img1-1.png') }}" class="w-full" alt="Project Inner Colum Image">
+                </div>
+            </div>
+
+            <h3 class="mt-12 mb-10 text-2xl font-medium text-black dark:text-white">Technologies</h3>
+            <div class="progressbar-wrap space-y-7">
+                <div class="flex flex-wrap items-center gap-5 progressbar">
+                    <div class="w-8 icon">
+                        <img src="{{ url_for('static', filename='img/skill/html.svg') }}" alt="HTML5">
+                    </div>
+                    <div class="flex-1 bar" data-percentage="90%">
+                        <h5 class="mb-2 text-black dark:text-white progress-title-holder text-regular">
+                            <span class="progress-title">HTML5</span>
+                        </h5>
+                        <div class="progress-outer bg-platinum dark:bg-greyBlack h-1.5 rounded-2xl">
+                            <div class="progress-content bg-theme h-1.5 w-0 rounded-2xl"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-wrap items-center gap-5 progressbar">
+                    <div class="w-8 icon">
+                        <img src="{{ url_for('static', filename='img/skill/css.svg') }}" alt="CSS3">
+                    </div>
+                    <div class="flex-1 bar" data-percentage="80%">
+                        <h5 class="mb-2 text-black dark:text-white progress-title-holder text-regular">
+                            <span class="progress-title">CSS3</span>
+                        </h5>
+                        <div class="progress-outer bg-platinum dark:bg-greyBlack h-1.5 rounded-2xl">
+                            <div class="progress-content bg-theme h-1.5 w-0 rounded-2xl"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-wrap items-center gap-5 progressbar">
+                    <div class="w-8 icon">
+                        <img src="{{ url_for('static', filename='img/skill/js.svg') }}" alt="javascript">
+                    </div>
+                    <div class="flex-1 bar" data-percentage="60%">
+                        <h5 class="mb-2 text-black dark:text-white progress-title-holder text-regular">
+                            <span class="progress-title">javascript</span>
+                        </h5>
+                        <div class="progress-outer bg-platinum dark:bg-greyBlack h-1.5 rounded-2xl">
+                            <div class="progress-content bg-theme h-1.5 w-0 rounded-2xl"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-wrap items-center gap-5 progressbar">
+                    <div class="w-8 icon">
+                        <img src="{{ url_for('static', filename='img/skill/tailwind.svg') }}" alt="TailwindCSS">
+                    </div>
+                    <div class="flex-1 bar" data-percentage="90%">
+                        <h5 class="mb-2 text-black dark:text-white progress-title-holder text-regular">
+                            <span class="progress-title">TailwindCSS</span>
+                        </h5>
+                        <div class="progress-outer bg-platinum dark:bg-greyBlack h-1.5 rounded-2xl">
+                            <div class="progress-content bg-theme h-1.5 w-0 rounded-2xl"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-wrap items-center gap-5 progressbar">
+                    <div class="w-8 icon">
+                        <img src="{{ url_for('static', filename='img/skill/figma.svg') }}" alt="TailwindCSS">
+                    </div>
+                    <div class="flex-1 bar" data-percentage="80%">
+                        <h5 class="mb-2 text-black dark:text-white progress-title-holder text-regular">
+                            <span class="progress-title">Figma</span>
+                        </h5>
+                        <div class="progress-outer bg-platinum dark:bg-greyBlack h-1.5 rounded-2xl">
+                            <div class="progress-content bg-theme h-1.5 w-0 rounded-2xl"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- Project Details Section End -->
+
+{% endblock %}

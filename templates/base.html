@@ -1,28 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Basic Page Needs
+    ================================================== -->
     <meta charset="UTF-8">
-    <title>Edson Ng - Portfolio</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Specific Meta
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="keyword"
+        content="resume, cv, portfolio, vcard, responsive, retina, jquery, css3, tailwindcss, material CV, creative, designer, developer, online cv, online resume, powerful portfolio, professional, landing page">
+    <meta name="description" content="Edson Ng Website">
+    <meta name="author" content="Edson">
+
+    <!-- Site Title
+    ================================================== -->
+    <title>{% block title %}{% endblock %}</title>
+
+    <!-- Site Favicon
+    ================================================== -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/logos/E_logo.gif') }}" sizes="any">
+
+    <!-- Google Fonts
+    ================================================== -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='src/output.css') }}">
-    {% block head %}{% endblock %}
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <!-- All CSS Here
+    ================================================== -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fontAwesome5Pro.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cdheadline.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/swiper-bundle.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.min.css') }}">
+
 </head>
-<body class="bg-gray-900 text-gray-100">
-    {% block navbar %}
-        {% include "includes/navbar.html" %}
-    {% endblock %}
-    
-    <main>
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            {% block content %}{% endblock %}
+<body class="relative custom_cursor">
+    <!-- Custom Cursor Start -->
+    <div class="custom_cursor_one fixed top-0 left-0 w-8 h-8 border border-gray-400 rounded-full pointer-events-none">
+    </div>
+    <div
+        class="custom_cursor_two w-1 h-1 rounded-full border border-gray-400 bg-metborder-gray-400 fixed pointer-events-none left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+    </div>
+    <!-- Custom Cursor End -->
+
+    <!-- App Preloader Start -->
+    <div id="preloader">
+        <div class="loader_line"></div>
+        <div
+            class="absolute w-20 h-20 transition-all delay-300 -translate-x-1/2 -translate-y-1/2 rounded-full logo top-1/2 left-1/2 bg-nightBlack border-greyBlack flex-center">
+            <img src="{{ url_for('static', filename='img/logos/E_logo.gif') }}" alt="Edson">
         </div>
-    </main>
+    </div>
+    <!-- App Preloader End -->
     
-    {% block footer %}
-        {% include "includes/footer.html" %}
-    {% endblock %}
+    <!-- App Start -->
+    <div class="relative pt-10 minfo__app max-xl:pt-20">
+        <div
+            class="menu-overlay fixed top-0 left-0 w-full h-full bg-black/60 transition-all duration-200 z-999 opacity-0 invisible [&.is-menu-open]:visible [&.is-menu-open]:opacity-100">
+        </div>
+        <div class="max-lg:px-4">
+            {% block navbar %}
+            {% include "includes/navbar.html" %}
+            {% endblock %}
+            <!-- Main Content Start -->
+            <div class="minfo__contentBox relative mx-auto max-w-container xl:max-2xl:max-w-65rem *:py-5 xl:*:py-3.5 *:max-w-content max-xl:*:mx-auto xl:*:ml-auto xl:max-2xl:*:max-w-50rem">
+                {% block content %}{% endblock %}
+            </div>
+            {% block footer %}
+            {% include "includes/footer.html" %}
+            {% endblock %}
+        </div>
+    </div>
+    
+    <!-- Background Line and Animation -->
+    <div
+        class="bg-lines fixed inset-0 -z-1 md:max-xl:max-w-[45rem] xl:max-w-60rem 2xl:max-w-container mx-auto max-sm:px-8 sm:max-xl:px-12">
+        <div
+            class="line-wrapper max-w-[1130px] w-full h-full ml-auto 2xl:-mr-24 relative flex justify-between *:w-px *:h-full *:border-r *:border-dashed *:border-slate-300 dark:*:border-metalBlack *:relative *:before:absolute *:before:bg-theme *:before:rotate-45 *:before:-left-1 *:before:w-2 *:before:h-2">
+            <div class="line1 before:animate-top_bottom"></div>
+            <div class="line2 before:bottom-0 before:animate-bottom_top before:animate-delay-3s"></div>
+            <div class="line3 before:animate-top_bottom before:animate-delay-3s"></div>
+            <div class="line4 before:bottom-0 before:animate-bottom_top before:animate-delay-2s"></div>
+        </div>
+    </div>
+    <!-- Ends Here -->
+
+    <!-- Style Switcher Started -->
+    <div
+        class="style-switcher fixed right-0 top-1/2 -translate-y-1/2 translate-x-[15rem] w-[15rem] [&.active]:translate-x-0 transition z-[9999]">
+
+        <div
+            class="toggle-btn absolute -left-15 w-15 h-15 bg-white dark:bg-nightBlack text-black dark:text-white flex-center cursor-pointer rounded-[.5rem_0_0_.5rem] select-none shadow-sm shadow-slate-400">
+            <span class="fal fa-cog fa-spin"></span>
+        </div>
+
+        <div
+            class="theme-select shadow-sm shadow-slate-400 px-6 py-4 bg-white dark:bg-nightBlack rounded-[0_0_0_.5rem]">
+            <h5 class="font-medium mb-2 !text-black dark:!text-white text-lg">Theme Mode</h5>
+
+            <div class="flex items-center justify-between gap-4">
+                <div class="switcher-input rounded-lg text-xl flex-[1] text-center transition cursor-pointer"
+                    data-theme="dark">
+                    <button
+                        class="border w-full px-4 py-4 flex flex-col gap-1 justify-center items-center [&.active]:bg-flashWhite [&.active]:text-black dark:text-white rounded-md"
+                        id="dark_theme" title="Active Dark Theme">
+                        <i class="fal fa-moon"></i>
+                    </button>
+                </div>
+                <div class="switcher-input rounded-lg text-lg flex-[1] text-center transition cursor-pointer"
+                    data-theme="light">
+                    <button
+                        class="border w-full px-4 py-4 flex flex-col gap-1 justify-center items-center [&.active]:bg-flashWhite [&.active]:text-black dark:text-white rounded-md"
+                        id="light_theme" title="Active Light Theme">
+                        <i class="fal fa-sun"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- Style Switcher End -->
+
+    {% block scripts %}
+    <!-- Js Library Start -->
+    <script src="{{ url_for('static', filename='js/jquery-3.6.0.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/waypoints.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/tw-elements.umd.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/cd-headline.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.counterup.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/swiper-bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/scrollIt.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/circle-progress.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/theme-mode.js') }}"></script>
+    <!-- Js Library End -->
+     {% endblock %}
 </body>
 </html>

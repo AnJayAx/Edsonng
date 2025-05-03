@@ -26,8 +26,11 @@
                 </a>
             </div>
         </div>
-        <div class="mb-4 overflow-hidden mt-7 xl:my-8 thumb rounded-xl xl:rounded-2xl">
-            <img src="{{ url_for('static', filename='img/portfolio/portfolio-img1-xl.png') }}" class="w-full" alt="Project Thumbnail Image">
+        <div class="mb-4 overflow-hidden mt-7 xl:my-8 thumb">
+            <video class="w-full" controls>
+                <source src="{{ url_for('static', filename='vid/Caduceus_Project.mp4') }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
         <div class="post-meta sm:flex items-center justify-between my-8 mb-10 max-sm:space-y-3.5">
             <div>
@@ -72,80 +75,45 @@
             </ul>
 
             <div class="grid gap-5 my-8 sm:grid-cols-2 md:gap-8">
-                <div class="overflow-hidden rounded-xl xl:rounded-2xl">
-                    <img src="{{ url_for('static', filename='img/portfolio/portfolio-img1-2.png') }}" class="w-full" alt="Project Inner Colum Image">
+                <div class="overflow-hidden ">
+                    <img src="{{ url_for('static', filename='img/projects/Caduceus/Symptom_Analyzer_CLF.png') }}" class="w-full" alt="CLF Confusion Matrix">
                 </div>
                 <div class="overflow-hidden rounded-xl xl:rounded-2xl">
-                    <img src="{{ url_for('static', filename='img/portfolio/portfolio-img1-1.png') }}" class="w-full" alt="Project Inner Colum Image">
+                    <img src="{{ url_for('static', filename='img/projects/Caduceus/Symptom_Analyzer_XGB.png') }}" class="w-full" alt="XGB Confusion Matrix">
                 </div>
             </div>
 
-            <h3 class="mt-12 mb-10 text-2xl font-medium text-black dark:text-white">Technologies</h3>
-            <div class="progressbar-wrap space-y-7">
-                <div class="flex flex-wrap items-center gap-5 progressbar">
-                    <div class="w-8 icon">
-                        <img src="{{ url_for('static', filename='img/skill/html.svg') }}" alt="HTML5">
+            <h3 class="mt-12 mb-6 text-2xl font-medium text-black dark:text-white">Technologies</h3>
+            <div class="flex flex-wrap gap-6 items-center">
+                <div class="flex flex-col items-center">
+                    <div class="w-12 h-12 mb-2">
+                        <img src="{{ url_for('static', filename='img/skill/html.svg') }}" alt="HTML5" class="w-full h-full">
                     </div>
-                    <div class="flex-1 bar" data-percentage="90%">
-                        <h5 class="mb-2 text-black dark:text-white progress-title-holder text-regular">
-                            <span class="progress-title">HTML5</span>
-                        </h5>
-                        <div class="progress-outer bg-platinum dark:bg-greyBlack h-1.5 rounded-2xl">
-                            <div class="progress-content bg-theme h-1.5 w-0 rounded-2xl"></div>
-                        </div>
-                    </div>
+                    <span class="text-sm text-black dark:text-white">HTML5</span>
                 </div>
-                <div class="flex flex-wrap items-center gap-5 progressbar">
-                    <div class="w-8 icon">
-                        <img src="{{ url_for('static', filename='img/skill/css.svg') }}" alt="CSS3">
+                <div class="flex flex-col items-center">
+                    <div class="w-12 h-12 mb-2">
+                        <img src="{{ url_for('static', filename='img/skill/css.svg') }}" alt="CSS3" class="w-full h-full">
                     </div>
-                    <div class="flex-1 bar" data-percentage="80%">
-                        <h5 class="mb-2 text-black dark:text-white progress-title-holder text-regular">
-                            <span class="progress-title">CSS3</span>
-                        </h5>
-                        <div class="progress-outer bg-platinum dark:bg-greyBlack h-1.5 rounded-2xl">
-                            <div class="progress-content bg-theme h-1.5 w-0 rounded-2xl"></div>
-                        </div>
-                    </div>
+                    <span class="text-sm text-black dark:text-white">CSS3</span>
                 </div>
-                <div class="flex flex-wrap items-center gap-5 progressbar">
-                    <div class="w-8 icon">
-                        <img src="{{ url_for('static', filename='img/skill/js.svg') }}" alt="javascript">
+                <div class="flex flex-col items-center">
+                    <div class="w-12 h-12 mb-2">
+                        <img src="{{ url_for('static', filename='img/skill/js.svg') }}" alt="JavaScript" class="w-full h-full">
                     </div>
-                    <div class="flex-1 bar" data-percentage="60%">
-                        <h5 class="mb-2 text-black dark:text-white progress-title-holder text-regular">
-                            <span class="progress-title">javascript</span>
-                        </h5>
-                        <div class="progress-outer bg-platinum dark:bg-greyBlack h-1.5 rounded-2xl">
-                            <div class="progress-content bg-theme h-1.5 w-0 rounded-2xl"></div>
-                        </div>
-                    </div>
+                    <span class="text-sm text-black dark:text-white">JavaScript</span>
                 </div>
-                <div class="flex flex-wrap items-center gap-5 progressbar">
-                    <div class="w-8 icon">
-                        <img src="{{ url_for('static', filename='img/skill/tailwind.svg') }}" alt="TailwindCSS">
+                <div class="flex flex-col items-center">
+                    <div class="w-12 h-12 mb-2">
+                        <img src="{{ url_for('static', filename='img/logos/Python.png') }}" alt="TailwindCSS" class="w-full h-full">
                     </div>
-                    <div class="flex-1 bar" data-percentage="90%">
-                        <h5 class="mb-2 text-black dark:text-white progress-title-holder text-regular">
-                            <span class="progress-title">TailwindCSS</span>
-                        </h5>
-                        <div class="progress-outer bg-platinum dark:bg-greyBlack h-1.5 rounded-2xl">
-                            <div class="progress-content bg-theme h-1.5 w-0 rounded-2xl"></div>
-                        </div>
-                    </div>
+                    <span class="text-sm text-black dark:text-white">Python</span>
                 </div>
-                <div class="flex flex-wrap items-center gap-5 progressbar">
-                    <div class="w-8 icon">
-                        <img src="{{ url_for('static', filename='img/skill/figma.svg') }}" alt="TailwindCSS">
+                <div class="flex flex-col items-center">
+                    <div class="w-12 h-12 mb-2">
+                        <img src="{{ url_for('static', filename='img/logos/Flask.svg') }}" alt="Figma" class="w-full h-full">
                     </div>
-                    <div class="flex-1 bar" data-percentage="80%">
-                        <h5 class="mb-2 text-black dark:text-white progress-title-holder text-regular">
-                            <span class="progress-title">Figma</span>
-                        </h5>
-                        <div class="progress-outer bg-platinum dark:bg-greyBlack h-1.5 rounded-2xl">
-                            <div class="progress-content bg-theme h-1.5 w-0 rounded-2xl"></div>
-                        </div>
-                    </div>
+                    <span class="text-sm text-black dark:text-white">Flask</span>
                 </div>
             </div>
         </div>

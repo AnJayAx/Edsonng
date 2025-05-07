@@ -10,6 +10,10 @@ app = Flask(__name__)
 csv_path = os.path.join(os.path.dirname(__file__), 'models/Symptom_Analyser/Symptom-severity.csv')
 symptom_severity_df = pd.read_csv(csv_path)
 
+# Load the disease precaution data
+precaution_path = os.path.join(os.path.dirname(__file__), 'models/Symptom_Analyser/Disease_precaution.csv')
+disease_precaution_df = pd.read_csv(precaution_path)
+
 # Load the machine learning models
 models_dir = os.path.join(os.path.dirname(__file__), 'models/Symptom_Analyser')
 clf_model = joblib.load(os.path.join(models_dir, 'CLF_model.sav'))
@@ -110,6 +114,44 @@ def ai_tools():
             
             print(f"Final disease prediction: {disease}")
             
+            # Get precautions for the predicted disease
+            precautions = []
+            try:
+                # Extract the base disease name without any severity indicators in parentheses
+                base_disease = disease.split('(')[0].strip()
+                print(f"Looking for precautions for base disease: {base_disease}")
+                
+                # Find the row with the predicted disease
+                disease_row = disease_precaution_df[disease_precaution_df['Disease'].str.contains(base_disease, case=False, na=False)]
+                
+                # If the disease is found in the precaution dataframe, extract precautions
+                if not disease_row.empty:
+                    print(f"Found precautions for disease: {disease_row['Disease'].values[0]}")
+                    for i in range(1, 5):  # There are 4 precaution columns
+                        precaution_col = f'Precaution_{i}'
+                        if precaution_col in disease_row.columns:
+                            precaution = disease_row.iloc[0][precaution_col]
+                            if isinstance(precaution, str) and precaution.strip() and precaution.lower() != 'nan':
+                                precautions.append(precaution.strip())
+                else:
+                    print(f"No specific precautions found for {base_disease}")
+                
+                if not precautions:
+                    precautions = [
+                        'Consult with a healthcare professional for specific precautions',
+                        'Follow general health guidelines',
+                        'Monitor your symptoms closely'
+                    ]
+            except Exception as e:
+                print(f"Error getting precautions: {e}")
+                precautions = [
+                    'Consult with a healthcare professional for specific precautions',
+                    'Follow general health guidelines',
+                    'Monitor your symptoms closely'
+                ]
+            
+            print(f"Precautions for {disease}: {precautions}")
+            
             response = {
                 'disease': disease,
                 'description': f'You selected {len(symptoms)} symptoms: {", ".join(symptoms)}',
@@ -120,6 +162,7 @@ def ai_tools():
                     'Monitor your symptoms',
                     'Stay hydrated and get plenty of rest'
                 ],
+                'precautions': precautions,
                 'selected_symptoms': symptoms,
                 'model_predictions': {
                     'clf': clf_prediction if 'clf_prediction' in locals() else "N/A",

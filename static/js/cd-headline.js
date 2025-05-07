@@ -7,12 +7,12 @@ jQuery(document).ready(function($){
 		//letters effect
 		lettersDelay = 50,
 		//type effect
-		typeLettersDelay = 150,
+		typeLettersDelay = 300,
 		selectionDuration = 500,
 		typeAnimationDelay = selectionDuration + 800,
 		//clip effect 
 		revealDuration = 1000,
-		revealAnimationDelay = 1500;
+		revealAnimationDelay = 1800;
 	
 	initHeadline();
 	
@@ -121,8 +121,31 @@ jQuery(document).ready(function($){
 
 	function showWord($word, $duration) {
 		if($word.parents('.cd-headline').hasClass('type')) {
-			showLetter($word.find('i').eq(0), $word, false, $duration);
+			// Modified to ensure one letter at a time typing effect
 			$word.addClass('is-visible').removeClass('is-hidden');
+			
+			// Get all letters in the word
+			var $letters = $word.find('i');
+			
+			// Hide all letters initially
+			$letters.removeClass('in').addClass('out');
+			
+			// Show letters one by one with delay
+			var letterIndex = 0;
+			
+			function showNextLetter() {
+				if (letterIndex < $letters.length) {
+					$($letters[letterIndex]).removeClass('out').addClass('in');
+					letterIndex++;
+					setTimeout(showNextLetter, typeLettersDelay);
+				} else {
+					// Once all letters are shown, wait before hiding the word
+					setTimeout(function() { hideWord($word) }, animationDelay);
+				}
+			}
+			
+			// Start the letter-by-letter animation
+			showNextLetter();
 		} else if($word.parents('.cd-headline').hasClass('clip')) {
 			// Add this multi-step animation to create a choppy effect
 			var wordWidth = $word.width() + 10;

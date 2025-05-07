@@ -2,12 +2,18 @@
 {% block title %}WELCOME{% endblock %}
 
 {% block content %}
-<div class="service-section px-5 py-8 md:p-8 bg-white dark:bg-nightBlack rounded-2xl lg:p-10 2xl:p-13">
+<div class="service-section px-5 py-8 md:p-8 bg-white dark:bg-nightBlack rounded-2xl lg:p-10 2xl:p-13 relative">
+    
     <div
         class="inline-flex items-center gap-2 px-4 py-2 text-xs tracking-wide text-black dark:text-white border lg:px-5 section-name border-platinum dark:border-greyBlack200 rounded-4xl">
         <i class="fal fa-briefcase text-theme"></i>
         AI-Tools
     </div>
+    <!-- Back button added at the top right -->
+    <a href="/caduceus-project" class="absolute top-4 right-4 md:top-8 md:right-8 inline-flex items-center gap-2 px-4 py-2 text-sm bg-theme text-white hover:bg-opacity-90 transition-all">
+        <i class="fas fa-arrow-left"></i>
+        Back to Caduceus Project
+    </a>
     <div class="mb-8 mt-7 md:my-10 section-title">
         <h2 class="title text-[32px] md:text-4xl lg:text-5xl font-extralight text-black dark:text-white leading-1.27">
             <span class="font-semibold text-theme">Symptom Analyser</span>
@@ -28,102 +34,16 @@
     <div class="mt-6">
         <h2 class="text-xl font-medium text-black dark:text-white mb-3">Select symptoms</h2>
         <form method="post" class="max-w-lg">
-            <div class="mb-4 max-h-96 overflow-y-auto p-4 border border-platinum dark:border-greyBlack200 rounded-lg">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    <label class="flex items-center space-x-2 cursor-pointer">
-                        <input type="checkbox" name="symptoms[]" value="itching" class="form-checkbox text-theme rounded">
-                        <span class="text-black dark:text-white">Itching</span>
-                    </label>
-                    <label class="flex items-center space-x-2 cursor-pointer">
-                        <input type="checkbox" name="symptoms[]" value="skin_rash" class="form-checkbox text-theme rounded">
-                        <span class="text-black dark:text-white">Skin Rash</span>
-                    </label>
-                    <label class="flex items-center space-x-2 cursor-pointer">
-                        <input type="checkbox" name="symptoms[]" value="continuous_sneezing" class="form-checkbox text-theme rounded">
-                        <span class="text-black dark:text-white">Continuous Sneezing</span>
-                    </label>
-                    <label class="flex items-center space-x-2 cursor-pointer">
-                        <input type="checkbox" name="symptoms[]" value="shivering" class="form-checkbox text-theme rounded">
-                        <span class="text-black dark:text-white">Shivering</span>
-                    </label>
-                    <label class="flex items-center space-x-2 cursor-pointer">
-                        <input type="checkbox" name="symptoms[]" value="chills" class="form-checkbox text-theme rounded">
-                        <span class="text-black dark:text-white">Chills</span>
-                    </label>
-                    <label class="flex items-center space-x-2 cursor-pointer">
-                        <input type="checkbox" name="symptoms[]" value="joint_pain" class="form-checkbox text-theme rounded">
-                        <span class="text-black dark:text-white">Joint Pain</span>
-                    </label>
-                    <label class="flex items-center space-x-2 cursor-pointer">
-                        <input type="checkbox" name="symptoms[]" value="stomach_pain" class="form-checkbox text-theme rounded">
-                        <span class="text-black dark:text-white">Stomach Pain</span>
-                    </label>
-                    <label class="flex items-center space-x-2 cursor-pointer">
-                        <input type="checkbox" name="symptoms[]" value="ulcers_on_tongue" class="form-checkbox text-theme rounded">
-                        <span class="text-black dark:text-white">Ulcers on tongue</span>
-                    </label>
-                    <label class="flex items-center space-x-2 cursor-pointer">
-                        <input type="checkbox" name="symptoms[]" value="vomiting" class="form-checkbox text-theme rounded">
-                        <span class="text-black dark:text-white">Vomiting</span>
-                    </label>
-                    <label class="flex items-center space-x-2 cursor-pointer">
-                        <input type="checkbox" name="symptoms[]" value="fatigue" class="form-checkbox text-theme rounded">
-                        <span class="text-black dark:text-white">Fatigue</span>
-                    </label>
-                    <label class="flex items-center space-x-2 cursor-pointer">
-                        <input type="checkbox" name="symptoms[]" value="anxiety" class="form-checkbox text-theme rounded">
-                        <span class="text-black dark:text-white">Anxiety</span>
-                    </label>
-                    <label class="flex items-center space-x-2 cursor-pointer">
-                        <input type="checkbox" name="symptoms[]" value="cold_hands_and_feets" class="form-checkbox text-theme rounded">
-                        <span class="text-black dark:text-white">Cold hands and feet</span>
-                    </label>
-                    <label class="flex items-center space-x-2 cursor-pointer">
-                        <input type="checkbox" name="symptoms[]" value="cough" class="form-checkbox text-theme rounded">
-                        <span class="text-black dark:text-white">Cough</span>
-                    </label>
-                    <label class="flex items-center space-x-2 cursor-pointer">
-                        <input type="checkbox" name="symptoms[]" value="high_fever" class="form-checkbox text-theme rounded">
-                        <span class="text-black dark:text-white">High Fever</span>
-                    </label>
-                    <label class="flex items-center space-x-2 cursor-pointer">
-                        <input type="checkbox" name="symptoms[]" value="breathlessness" class="form-checkbox text-theme rounded">
-                        <span class="text-black dark:text-white">Breathlessness</span>
-                    </label>
-                    <label class="flex items-center space-x-2 cursor-pointer">
-                        <input type="checkbox" name="symptoms[]" value="headache" class="form-checkbox text-theme rounded">
-                        <span class="text-black dark:text-white">Headache</span>
-                    </label>
-                    <label class="flex items-center space-x-2 cursor-pointer">
-                        <input type="checkbox" name="symptoms[]" value="nausea" class="form-checkbox text-theme rounded">
-                        <span class="text-black dark:text-white">Nausea</span>
-                    </label>
-                    <label class="flex items-center space-x-2 cursor-pointer">
-                        <input type="checkbox" name="symptoms[]" value="loss_of_appetite" class="form-checkbox text-theme rounded">
-                        <span class="text-black dark:text-white">Loss of Appetite</span>
-                    </label>
-                    <label class="flex items-center space-x-2 cursor-pointer">
-                        <input type="checkbox" name="symptoms[]" value="abdominal_pain" class="form-checkbox text-theme rounded">
-                        <span class="text-black dark:text-white">Abdominal Pain</span>
-                    </label>
-                    <label class="flex items-center space-x-2 cursor-pointer">
-                        <input type="checkbox" name="symptoms[]" value="diarrhoea" class="form-checkbox text-theme rounded">
-                        <span class="text-black dark:text-white">Diarrhoea</span>
-                    </label>
-                    <label class="flex items-center space-x-2 cursor-pointer">
-                        <input type="checkbox" name="symptoms[]" value="throat_irritation" class="form-checkbox text-theme rounded">
-                        <span class="text-black dark:text-white">Throat Irritation</span>
-                    </label>
-                    <label class="flex items-center space-x-2 cursor-pointer">
-                        <input type="checkbox" name="symptoms[]" value="chest_pain" class="form-checkbox text-theme rounded">
-                        <span class="text-black dark:text-white">Chest Pain</span>
-                    </label>
-                </div>
+            <div class="mb-4 relative">
+                <select id="symptoms-select" multiple class="w-full p-3 border border-platinum dark:border-greyBlack200 bg-white dark:bg-greyBlack200 text-black dark:text-white">
+                    <!-- Options will be populated from CSV data via JavaScript -->
+                </select>
             </div>
             
             <div id="selected-symptoms-summary" class="flex flex-wrap gap-2 mb-4 text-sm text-black dark:text-white">
                 <span id="selected-count">0</span> symptoms selected
-                <div id="selected-symptoms-tags" class="flex flex-wrap gap-2 mt-2 w-full"></div>
+                <!-- Hiding the tags container -->
+                <div id="selected-symptoms-tags" class="hidden"></div>
             </div>
             
             <button type="submit" id="analyse-btn" class="px-6 py-2 bg-theme text-white hover:bg-opacity-90 transition-all">
@@ -158,8 +78,8 @@
             </div>
             
             <div class="mb-2">
-                <h4 class="text-lg font-medium text-black dark:text-white mb-2">Recommended Actions</h4>
-                <ul id="result-recommendations" class="list-disc pl-5 text-gray-700 dark:text-gray-300">
+                <h4 class="text-lg font-medium text-black dark:text-white mb-2">Precautions to Take</h4>
+                <ul id="result-precautions" class="list-disc pl-5 text-gray-700 dark:text-gray-300">
                 </ul>
             </div>
             
@@ -172,52 +92,216 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const checkboxes = document.querySelectorAll('input[type="checkbox"][name="symptoms[]"]');
+        // CSV data for symptoms
+        const symptomsData = [
+            {code: "itching", name: "Itching"},
+            {code: "skin_rash", name: "Skin Rash"},
+            {code: "nodal_skin_eruptions", name: "Nodal Skin Eruptions"},
+            {code: "continuous_sneezing", name: "Continuous Sneezing"},
+            {code: "shivering", name: "Shivering"},
+            {code: "chills", name: "Chills"},
+            {code: "joint_pain", name: "Joint Pain"},
+            {code: "stomach_pain", name: "Stomach Pain"},
+            {code: "acidity", name: "Acidity"},
+            {code: "ulcers_on_tongue", name: "Ulcers On Tongue"},
+            {code: "muscle_wasting", name: "Muscle Wasting"},
+            {code: "vomiting", name: "Vomiting"},
+            {code: "burning_micturition", name: "Burning Micturition"},
+            {code: "spotting_urination", name: "Spotting Urination"},
+            {code: "fatigue", name: "Fatigue"},
+            {code: "weight_gain", name: "Weight Gain"},
+            {code: "anxiety", name: "Anxiety"},
+            {code: "cold_hands_and_feets", name: "Cold Hands And Feet"},
+            {code: "mood_swings", name: "Mood Swings"},
+            {code: "weight_loss", name: "Weight Loss"},
+            {code: "restlessness", name: "Restlessness"},
+            {code: "lethargy", name: "Lethargy"},
+            {code: "patches_in_throat", name: "Patches In Throat"},
+            {code: "irregular_sugar_level", name: "Irregular Sugar Level"},
+            {code: "cough", name: "Cough"},
+            {code: "high_fever", name: "High Fever"},
+            {code: "sunken_eyes", name: "Sunken Eyes"},
+            {code: "breathlessness", name: "Breathlessness"},
+            {code: "sweating", name: "Sweating"},
+            {code: "dehydration", name: "Dehydration"},
+            {code: "indigestion", name: "Indigestion"},
+            {code: "headache", name: "Headache"},
+            {code: "yellowish_skin", name: "Yellowish Skin"},
+            {code: "dark_urine", name: "Dark Urine"},
+            {code: "nausea", name: "Nausea"},
+            {code: "loss_of_appetite", name: "Loss Of Appetite"},
+            {code: "pain_behind_the_eyes", name: "Pain Behind The Eyes"},
+            {code: "back_pain", name: "Back Pain"},
+            {code: "constipation", name: "Constipation"},
+            {code: "abdominal_pain", name: "Abdominal Pain"},
+            {code: "diarrhoea", name: "Diarrhoea"},
+            {code: "mild_fever", name: "Mild Fever"},
+            {code: "yellow_urine", name: "Yellow Urine"},
+            {code: "yellowing_of_eyes", name: "Yellowing Of Eyes"},
+            {code: "acute_liver_failure", name: "Acute Liver Failure"},
+            {code: "fluid_overload", name: "Fluid Overload"},
+            {code: "swelling_of_stomach", name: "Swelling Of Stomach"},
+            {code: "swelled_lymph_nodes", name: "Swelled Lymph Nodes"},
+            {code: "malaise", name: "Malaise"},
+            {code: "blurred_and_distorted_vision", name: "Blurred And Distorted Vision"},
+            {code: "phlegm", name: "Phlegm"},
+            {code: "throat_irritation", name: "Throat Irritation"},
+            {code: "redness_of_eyes", name: "Redness Of Eyes"},
+            {code: "sinus_pressure", name: "Sinus Pressure"},
+            {code: "runny_nose", name: "Runny Nose"},
+            {code: "congestion", name: "Congestion"},
+            {code: "chest_pain", name: "Chest Pain"},
+            {code: "weakness_in_limbs", name: "Weakness In Limbs"},
+            {code: "fast_heart_rate", name: "Fast Heart Rate"},
+            {code: "pain_during_bowel_movements", name: "Pain During Bowel Movements"},
+            {code: "pain_in_anal_region", name: "Pain In Anal Region"},
+            {code: "bloody_stool", name: "Bloody Stool"},
+            {code: "irritation_in_anus", name: "Irritation In Anus"},
+            {code: "neck_pain", name: "Neck Pain"},
+            {code: "dizziness", name: "Dizziness"},
+            {code: "cramps", name: "Cramps"},
+            {code: "bruising", name: "Bruising"},
+            {code: "obesity", name: "Obesity"},
+            {code: "swollen_legs", name: "Swollen Legs"},
+            {code: "swollen_blood_vessels", name: "Swollen Blood Vessels"},
+            {code: "puffy_face_and_eyes", name: "Puffy Face And Eyes"},
+            {code: "enlarged_thyroid", name: "Enlarged Thyroid"},
+            {code: "brittle_nails", name: "Brittle Nails"},
+            {code: "swollen_extremeties", name: "Swollen Extremities"},
+            {code: "excessive_hunger", name: "Excessive Hunger"},
+            {code: "extra_marital_contacts", name: "Extra Marital Contacts"},
+            {code: "drying_and_tingling_lips", name: "Drying And Tingling Lips"},
+            {code: "slurred_speech", name: "Slurred Speech"},
+            {code: "knee_pain", name: "Knee Pain"},
+            {code: "hip_joint_pain", name: "Hip Joint Pain"},
+            {code: "muscle_weakness", name: "Muscle Weakness"},
+            {code: "stiff_neck", name: "Stiff Neck"},
+            {code: "swelling_joints", name: "Swelling Joints"},
+            {code: "movement_stiffness", name: "Movement Stiffness"},
+            {code: "spinning_movements", name: "Spinning Movements"},
+            {code: "loss_of_balance", name: "Loss Of Balance"},
+            {code: "unsteadiness", name: "Unsteadiness"},
+            {code: "weakness_of_one_body_side", name: "Weakness Of One Body Side"},
+            {code: "loss_of_smell", name: "Loss Of Smell"},
+            {code: "bladder_discomfort", name: "Bladder Discomfort"},
+            {code: "foul_smell_ofurine", name: "Foul Smell Of Urine"},
+            {code: "continuous_feel_of_urine", name: "Continuous Feel Of Urine"},
+            {code: "passage_of_gases", name: "Passage Of Gases"},
+            {code: "internal_itching", name: "Internal Itching"},
+            {code: "toxic_look_(typhos)", name: "Toxic Look (Typhos)"},
+            {code: "depression", name: "Depression"},
+            {code: "irritability", name: "Irritability"},
+            {code: "muscle_pain", name: "Muscle Pain"},
+            {code: "altered_sensorium", name: "Altered Sensorium"},
+            {code: "red_spots_over_body", name: "Red Spots Over Body"},
+            {code: "belly_pain", name: "Belly Pain"},
+            {code: "abnormal_menstruation", name: "Abnormal Menstruation"},
+            {code: "dischromic_patches", name: "Dischromic Patches"},
+            {code: "watering_from_eyes", name: "Watering From Eyes"},
+            {code: "increased_appetite", name: "Increased Appetite"},
+            {code: "polyuria", name: "Polyuria"},
+            {code: "family_history", name: "Family History"},
+            {code: "mucoid_sputum", name: "Mucoid Sputum"},
+            {code: "rusty_sputum", name: "Rusty Sputum"},
+            {code: "lack_of_concentration", name: "Lack Of Concentration"},
+            {code: "visual_disturbances", name: "Visual Disturbances"},
+            {code: "receiving_blood_transfusion", name: "Receiving Blood Transfusion"},
+            {code: "receiving_unsterile_injections", name: "Receiving Unsterile Injections"},
+            {code: "coma", name: "Coma"},
+            {code: "stomach_bleeding", name: "Stomach Bleeding"},
+            {code: "distention_of_abdomen", name: "Distention Of Abdomen"},
+            {code: "history_of_alcohol_consumption", name: "History Of Alcohol Consumption"},
+            {code: "blood_in_sputum", name: "Blood In Sputum"},
+            {code: "prominent_veins_on_calf", name: "Prominent Veins On Calf"},
+            {code: "palpitations", name: "Palpitations"},
+            {code: "painful_walking", name: "Painful Walking"},
+            {code: "pus_filled_pimples", name: "Pus Filled Pimples"},
+            {code: "blackheads", name: "Blackheads"},
+            {code: "scurring", name: "Scurring"},
+            {code: "skin_peeling", name: "Skin Peeling"},
+            {code: "silver_like_dusting", name: "Silver Like Dusting"},
+            {code: "small_dents_in_nails", name: "Small Dents In Nails"},
+            {code: "inflammatory_nails", name: "Inflammatory Nails"},
+            {code: "blister", name: "Blister"},
+            {code: "red_sore_around_nose", name: "Red Sore Around Nose"},
+            {code: "yellow_crust_ooze", name: "Yellow Crust Ooze"}
+        ];
+
+        const selectElement = document.getElementById('symptoms-select');
         const selectedCountElement = document.getElementById('selected-count');
-        const selectedSymptomsTagsElement = document.getElementById('selected-symptoms-tags');
         const form = document.querySelector('form');
         const analyseBtn = document.getElementById('analyse-btn');
         const loadingIndicator = document.getElementById('loading-indicator');
         const resultsContainer = document.getElementById('results-container');
         
-        // Update selected symptoms count and tags
-        checkboxes.forEach(checkbox => {
-            checkbox.addEventListener('change', updateSelectedSymptoms);
-        });
+        // Initialize Select2 dropdown
+        loadSelect2();
+        
+        function loadSelect2() {
+            // Check if jQuery and Select2 are available
+            if (typeof jQuery !== 'undefined' && typeof jQuery.fn.select2 !== 'undefined') {
+                initializeSelect2();
+            } else {
+                // Load jQuery if not already loaded
+                if (typeof jQuery === 'undefined') {
+                    const jqueryScript = document.createElement('script');
+                    jqueryScript.src = 'https://code.jquery.com/jquery-3.6.0.min.js';
+                    jqueryScript.onload = loadSelect2Library;
+                    document.head.appendChild(jqueryScript);
+                } else {
+                    loadSelect2Library();
+                }
+            }
+        }
+        
+        function loadSelect2Library() {
+            // Load Select2 CSS
+            const select2CSS = document.createElement('link');
+            select2CSS.href = 'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css';
+            select2CSS.rel = 'stylesheet';
+            document.head.appendChild(select2CSS);
+            
+            // Load Select2 JS
+            const select2Script = document.createElement('script');
+            select2Script.src = 'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js';
+            select2Script.onload = initializeSelect2;
+            document.head.appendChild(select2Script);
+        }
+        
+        function initializeSelect2() {
+            // Populate dropdown with options from symptomsData
+            symptomsData.forEach(symptom => {
+                const option = document.createElement('option');
+                option.value = symptom.code;
+                option.textContent = symptom.name;
+                selectElement.appendChild(option);
+            });
+            
+            // Initialize Select2
+            $(selectElement).select2({
+                placeholder: 'Select symptoms',
+                width: '100%',
+                closeOnSelect: false,
+                theme: document.body.classList.contains('dark') ? 'classic' : 'default'
+            });
+            
+            // Update selected symptoms when selection changes
+            $(selectElement).on('change', updateSelectedSymptoms);
+        }
         
         function updateSelectedSymptoms() {
-            const selectedCheckboxes = document.querySelectorAll('input[type="checkbox"][name="symptoms[]"]:checked');
-            const selectedCount = selectedCheckboxes.length;
+            const selectedOptions = Array.from(selectElement.selectedOptions);
+            const selectedCount = selectedOptions.length;
             selectedCountElement.textContent = selectedCount;
             
-            // Clear previous tags
-            selectedSymptomsTagsElement.innerHTML = '';
-            
-            // Add tags for each selected symptom
-            selectedCheckboxes.forEach(checkbox => {
-                const tag = document.createElement('div');
-                tag.className = 'px-3 py-1 bg-white dark:bg-greyBlack200 text-black dark:text-white border border-platinum dark:border-greyBlack200 text-xs mr-2 mb-2';
-                
-                // Convert symptom_name to readable format (e.g., 'skin_rash' -> 'Skin Rash')
-                const symptomName = checkbox.value.split('_')
-                    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-                    .join(' ');
-                
-                tag.textContent = symptomName;
-                selectedSymptomsTagsElement.appendChild(tag);
-            });
+            // Removed code for creating and displaying tags
         }
         
         // Form submission with AJAX
         form.addEventListener('submit', function(event) {
             event.preventDefault();
             
-            const selectedSymptoms = [];
-            checkboxes.forEach(checkbox => {
-                if (checkbox.checked) {
-                    selectedSymptoms.push(checkbox.value);
-                }
-            });
+            const selectedSymptoms = Array.from(selectElement.selectedOptions).map(option => option.value);
             
             if (selectedSymptoms.length === 0) {
                 alert('Please select at least one symptom');
@@ -231,7 +315,7 @@
             loadingIndicator.style.display = 'flex'; // Ensure it's displayed as flex
             analyseBtn.disabled = true;
             
-            // Send AJAX request to symptom-analyser instead of symptom-analysis
+            // Send AJAX request
             fetch('/symptom-analyser', {
                 method: 'POST',
                 headers: {
@@ -245,7 +329,7 @@
             })
             .then(response => {
                 console.log('Response status:', response.status);
-                // Check if the response is ok (status in the range 200-299)
+                // Check if the response is ok
                 if (!response.ok) {
                     return response.text().then(text => {
                         throw new Error(`Server responded with status ${response.status}: ${text}`);
@@ -257,11 +341,11 @@
                 console.log('Received data:', data);
                 // Hide loading indicator
                 loadingIndicator.classList.add('hidden');
-                loadingIndicator.style.display = 'none'; // Ensure it's completely hidden
+                loadingIndicator.style.display = 'none';
                 analyseBtn.disabled = false;
                 
                 // Make sure data contains the expected fields
-                if (!data.disease || !data.description || !data.recommendations) {
+                if (!data.disease || !data.description) {
                     throw new Error('Received incomplete data from server');
                 }
                 
@@ -271,7 +355,7 @@
             .catch(error => {
                 console.error('Error details:', error);
                 loadingIndicator.classList.add('hidden');
-                loadingIndicator.style.display = 'none'; // Ensure it's completely hidden
+                loadingIndicator.style.display = 'none';
                 analyseBtn.disabled = false;
                 
                 // More descriptive error message
@@ -291,30 +375,22 @@
             document.getElementById('result-disease').textContent = data.disease || 'Unknown condition';
             document.getElementById('result-description').textContent = data.description || 'No description available';
             
-            // Clear previous recommendations
-            const recommendationsList = document.getElementById('result-recommendations');
-            recommendationsList.innerHTML = '';
+            // Display precautions
+            const precautionsList = document.getElementById('result-precautions');
+            precautionsList.innerHTML = '';
             
-            // Add new recommendations with safety check
-            if (Array.isArray(data.recommendations) && data.recommendations.length > 0) {
-                data.recommendations.forEach(recommendation => {
+            if (Array.isArray(data.precautions) && data.precautions.length > 0) {
+                data.precautions.forEach(precaution => {
                     const li = document.createElement('li');
                     li.className = 'mb-1';
-                    li.textContent = recommendation;
-                    recommendationsList.appendChild(li);
+                    li.textContent = precaution;
+                    precautionsList.appendChild(li);
                 });
             } else {
                 const li = document.createElement('li');
                 li.className = 'mb-1';
-                li.textContent = 'No specific recommendations available';
-                recommendationsList.appendChild(li);
-            }
-            
-            // Add selected symptoms to the description
-            if (data.selected_symptoms) {
-                const selectedSymptoms = data.selected_symptoms.join(', ');
-                document.getElementById('result-description').textContent += 
-                    `\n\n`;
+                li.textContent = 'No specific precautions available';
+                precautionsList.appendChild(li);
             }
             
             // Scroll to results
